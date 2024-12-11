@@ -2,6 +2,16 @@ name: Docker Image CI
 
 on:
   workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment'
+        required: true 
+        default: 'dev'
+        type: choice
+        options:
+          - dev
+          - prod
+
   push:
     branches: [ "main" ]
   pull_request:
